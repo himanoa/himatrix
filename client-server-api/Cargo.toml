@@ -3,6 +3,12 @@ name = "client-server-api"
 version = "0.1.0"
 authors = ["himanoa <matsunoappy@gmail.com>"]
 edition = "2018"
+[[bin]]
+name = "server"
+path = "src/main.rs"
+
+[lib]
+path = "src/lib.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -12,3 +18,9 @@ async-std = { version = "1.8.0", features = ["attributes"] }
 serde = { version = "1.0", features = ["derive"] }
 tide-fluent-routes = "0.1.4"
 tide-testing = "0.1.2"
+envconfig = "0.9.1"
+anyhow = "1.0.26"
+thiserror = "1.0.20"
+tide-tracing = "0.0.7"
+tracing = "0.1.22"
+tracing-subscriber = "0.2.15"
