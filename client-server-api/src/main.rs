@@ -1,4 +1,5 @@
 use client_server_api::routes::*;
+use client_server_api::state::State;
 use envconfig::Envconfig;
 use tide_tracing::TraceMiddleware;
 use tracing::Level;
@@ -18,7 +19,7 @@ async fn main() -> tide::Result<()> {
     tracing::subscriber::set_global_default(subscriber).expect("no global subscriber has been set");
 
     let config = Config::init_from_env().unwrap();
-    let mut app = tide::Server::new();
+    let mut app = tide::Server::with_state(State::new());
     app.with(TraceMiddleware::new());
 
     app.at("/_matrix/client/versions")
