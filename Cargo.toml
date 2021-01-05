@@ -1,4 +1,5 @@
 [workspace]
 members = [
-  "client-server-api"
+  "client-server-api",
+  "himatrix"
 ]
